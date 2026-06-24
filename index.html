@@ -1,684 +1,832 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jacek Janur - Mobile Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0
-        }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
+      :root {
+        --ink: #1a1a1a;
+        --ink-mid: #555;
+        --ink-light: #888;
+        --paper: #faf8f4;
+        --accent: #0e6e55;
+        --accent-pale: rgba(14, 110, 85, 0.07);
+        --accent-border: rgba(14, 110, 85, 0.18);
+        --rule: rgba(0, 0, 0, 0.07);
+        --serif: 'Noto Serif JP', serif;
+        --sans: 'DM Sans', sans-serif;
+      }
+
+      @media (prefers-color-scheme: dark) {
         :root {
-            --ink: #1a1a1a;
-            --ink-mid: #555;
-            --ink-light: #888;
-            --paper: #faf8f4;
-            --accent: #0e6e55;
-            --accent-pale: rgba(14, 110, 85, 0.07);
-            --accent-border: rgba(14, 110, 85, 0.18);
-            --rule: rgba(0, 0, 0, 0.07);
-            --serif: 'Noto Serif JP', serif;
-            --sans: 'DM Sans', sans-serif;
+          --ink: #e8e5df;
+          --ink-mid: #aaa;
+          --ink-light: #5a5a5a;
+          --paper: #131311;
+          --accent: #2ead87;
+          --accent-pale: rgba(46, 173, 135, 0.06);
+          --accent-border: rgba(46, 173, 135, 0.16);
+          --rule: rgba(255, 255, 255, 0.06);
         }
+      }
 
-        @media (prefers-color-scheme:dark) {
-            :root {
-                --ink: #e8e5df;
-                --ink-mid: #aaa;
-                --ink-light: #5a5a5a;
-                --paper: #131311;
-                --accent: #2ead87;
-                --accent-pale: rgba(46, 173, 135, 0.06);
-                --accent-border: rgba(46, 173, 135, 0.16);
-                --rule: rgba(255, 255, 255, 0.06);
-            }
-        }
+      /* ─── SEIGAIHA BACKGROUND ─── */
+      body {
+        font-family: var(--sans);
+        background-color: var(--paper);
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='22'%3E%3Cellipse cx='20' cy='22' rx='20' ry='14' fill='none' stroke='%230e6e55' stroke-width='0.4' stroke-opacity='0.09'/%3E%3Cellipse cx='0' cy='22' rx='20' ry='14' fill='none' stroke='%230e6e55' stroke-width='0.4' stroke-opacity='0.09'/%3E%3Cellipse cx='40' cy='22' rx='20' ry='14' fill='none' stroke='%230e6e55' stroke-width='0.4' stroke-opacity='0.09'/%3E%3Cellipse cx='10' cy='11' rx='20' ry='14' fill='none' stroke='%230e6e55' stroke-width='0.4' stroke-opacity='0.09'/%3E%3Cellipse cx='30' cy='11' rx='20' ry='14' fill='none' stroke='%230e6e55' stroke-width='0.4' stroke-opacity='0.09'/%3E%3C/svg%3E");
+        background-size: 40px 22px;
+        color: var(--ink);
+        min-height: 100vh;
+      }
 
-        /* ─── SEIGAIHA BACKGROUND ─── */
+      @media (prefers-color-scheme: dark) {
         body {
-            font-family: var(--sans);
-            background-color: var(--paper);
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='22'%3E%3Cellipse cx='20' cy='22' rx='20' ry='14' fill='none' stroke='%230e6e55' stroke-width='0.4' stroke-opacity='0.09'/%3E%3Cellipse cx='0' cy='22' rx='20' ry='14' fill='none' stroke='%230e6e55' stroke-width='0.4' stroke-opacity='0.09'/%3E%3Cellipse cx='40' cy='22' rx='20' ry='14' fill='none' stroke='%230e6e55' stroke-width='0.4' stroke-opacity='0.09'/%3E%3Cellipse cx='10' cy='11' rx='20' ry='14' fill='none' stroke='%230e6e55' stroke-width='0.4' stroke-opacity='0.09'/%3E%3Cellipse cx='30' cy='11' rx='20' ry='14' fill='none' stroke='%230e6e55' stroke-width='0.4' stroke-opacity='0.09'/%3E%3C/svg%3E");
-            background-size: 40px 22px;
-            color: var(--ink);
-            min-height: 100vh;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='22'%3E%3Cellipse cx='20' cy='22' rx='20' ry='14' fill='none' stroke='%232ead87' stroke-width='0.4' stroke-opacity='0.07'/%3E%3Cellipse cx='0' cy='22' rx='20' ry='14' fill='none' stroke='%232ead87' stroke-width='0.4' stroke-opacity='0.07'/%3E%3Cellipse cx='40' cy='22' rx='20' ry='14' fill='none' stroke='%232ead87' stroke-width='0.4' stroke-opacity='0.07'/%3E%3Cellipse cx='10' cy='11' rx='20' ry='14' fill='none' stroke='%232ead87' stroke-width='0.4' stroke-opacity='0.07'/%3E%3Cellipse cx='30' cy='11' rx='20' ry='14' fill='none' stroke='%232ead87' stroke-width='0.4' stroke-opacity='0.07'/%3E%3C/svg%3E");
         }
+      }
 
-        @media (prefers-color-scheme:dark) {
-            body {
-                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='22'%3E%3Cellipse cx='20' cy='22' rx='20' ry='14' fill='none' stroke='%232ead87' stroke-width='0.4' stroke-opacity='0.07'/%3E%3Cellipse cx='0' cy='22' rx='20' ry='14' fill='none' stroke='%232ead87' stroke-width='0.4' stroke-opacity='0.07'/%3E%3Cellipse cx='40' cy='22' rx='20' ry='14' fill='none' stroke='%232ead87' stroke-width='0.4' stroke-opacity='0.07'/%3E%3Cellipse cx='10' cy='11' rx='20' ry='14' fill='none' stroke='%232ead87' stroke-width='0.4' stroke-opacity='0.07'/%3E%3Cellipse cx='30' cy='11' rx='20' ry='14' fill='none' stroke='%232ead87' stroke-width='0.4' stroke-opacity='0.07'/%3E%3C/svg%3E");
-            }
+      .wrap {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 64px 32px 96px;
+      }
+
+      /* ─── HERO ─── */
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 72px;
+        border-bottom: 0.5px solid var(--rule);
+      }
+
+      .mon {
+        position: relative;
+        width: 96px;
+        height: 96px;
+        margin-bottom: 32px;
+      }
+
+      .mon-ring-outer {
+        position: absolute;
+        inset: 0;
+        border: 0.5px solid var(--accent-border);
+        border-radius: 50%;
+      }
+
+      .mon-ring-inner {
+        position: absolute;
+        inset: 9px;
+        border: 0.5px solid var(--accent-border);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .mon-kanji {
+        font-family: var(--serif);
+        font-size: 26px;
+        font-weight: 300;
+        color: var(--accent);
+        letter-spacing: -1px;
+        /* 残心 - Japanese: 残 (zan) + 心 (shin), both correct JP kanji */
+      }
+
+      .hero-name {
+        font-family: var(--serif);
+        font-size: 34px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        color: var(--ink);
+        margin-bottom: 8px;
+      }
+
+      .hero-role {
+        font-size: 13px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ink-light);
+        font-weight: 400;
+        margin-bottom: 24px;
+      }
+
+      .hero-quote {
+        font-family: var(--serif);
+        font-size: 13.5px;
+        font-weight: 300;
+        color: var(--ink-mid);
+        font-style: italic;
+        max-width: 420px;
+        line-height: 1.85;
+      }
+
+      .hero-quote cite {
+        display: block;
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        color: var(--ink-light);
+        margin-top: 8px;
+        font-style: normal;
+        text-transform: uppercase;
+      }
+
+      /* ─── SECTIONS ─── */
+      .section {
+        padding: 60px 0;
+        border-bottom: 0.5px solid var(--rule);
+      }
+
+      .section:last-of-type {
+        border-bottom: none;
+      }
+
+      .sec-header {
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        margin-bottom: 36px;
+      }
+
+      .sec-kanji {
+        font-family: var(--serif);
+        font-size: 20px;
+        font-weight: 300;
+        color: var(--accent);
+        opacity: 0.45;
+        flex-shrink: 0;
+        line-height: 1;
+      }
+
+      .sec-title {
+        font-size: 10.5px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--ink-light);
+        font-weight: 500;
+      }
+
+      /* ─── ABOUT ─── */
+      .about-text {
+        font-size: 15px;
+        color: var(--ink-mid);
+        line-height: 1.85;
+      }
+
+      .about-text + .about-text {
+        margin-top: 14px;
+      }
+
+      /* ─── FEATURED WORK ─── */
+      .project-card {
+        border: 0.5px solid var(--accent-border);
+        border-radius: 14px;
+        padding: 0;
+        background: var(--accent-pale);
+        overflow: hidden;
+      }
+
+      .project-body {
+        padding: 28px 28px 0;
+      }
+
+      .project-head {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .project-icon {
+        width: 46px;
+        height: 46px;
+        border: 0.5px solid var(--accent-border);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        flex-shrink: 0;
+        background: var(--paper);
+      }
+
+      .project-name {
+        font-family: var(--serif);
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--ink);
+        line-height: 1.2;
+      }
+
+      .project-sub {
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        color: var(--ink-light);
+        text-transform: uppercase;
+        margin-top: 3px;
+      }
+
+      .project-desc {
+        font-size: 14px;
+        color: var(--ink-mid);
+        line-height: 1.82;
+        margin-bottom: 20px;
+      }
+
+      .stats {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 18px;
+      }
+
+      .stat {
+        font-size: 12px;
+        color: var(--accent);
+        border: 0.5px solid var(--accent-border);
+        border-radius: 4px;
+        padding: 3px 10px;
+        letter-spacing: 0.04em;
+      }
+
+      .tags {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-bottom: 22px;
+      }
+
+      .tag {
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--ink-light);
+        border: 0.5px solid var(--rule);
+        border-radius: 3px;
+        padding: 2px 8px;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+      }
+
+      .plink {
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        color: var(--ink-mid);
+        border: 0.5px solid var(--rule);
+        border-radius: 6px;
+        padding: 7px 16px;
+        text-decoration: none;
+        transition:
+          border-color 0.18s,
+          color 0.18s;
+        background: var(--paper);
+      }
+
+      .plink:hover {
+        color: var(--accent);
+        border-color: var(--accent-border);
+      }
+
+      .plink.primary {
+        color: var(--accent);
+        border-color: var(--accent-border);
+      }
+
+      /* screenshot strip */
+      .project-screenshot {
+        width: 100%;
+        display: block;
+        border-top: 0.5px solid var(--accent-border);
+        max-height: 280px;
+        object-fit: cover;
+        object-position: top center;
+      }
+
+      /* ─── EXPERIENCE ─── */
+      .timeline {
+        position: relative;
+        padding-left: 22px;
+      }
+
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 10px;
+        bottom: 10px;
+        width: 0.5px;
+        background: var(--rule);
+      }
+
+      .exp-item {
+        position: relative;
+        padding-bottom: 36px;
+      }
+
+      .exp-item:last-child {
+        padding-bottom: 0;
+      }
+
+      .exp-dot {
+        position: absolute;
+        left: -26px;
+        top: 7px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: 0.5px solid var(--accent-border);
+        background: transparent;
+      }
+
+      .exp-item.active .exp-dot {
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+
+      .exp-company {
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--ink);
+        letter-spacing: 0.01em;
+      }
+
+      .exp-period {
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        color: var(--ink-light);
+        margin-top: 1px;
+        margin-bottom: 3px;
+      }
+
+      .exp-role {
+        font-size: 12.5px;
+        color: var(--accent);
+        margin-bottom: 8px;
+        letter-spacing: 0.02em;
+      }
+
+      .exp-desc {
+        font-size: 14px;
+        color: var(--ink-mid);
+        line-height: 1.78;
+      }
+
+      /* ─── SKILLS ─── */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      @media (max-width: 520px) {
+        .skills-grid {
+          grid-template-columns: 1fr;
         }
+      }
 
+      .skill-card {
+        border: 0.5px solid var(--rule);
+        border-radius: 9px;
+        padding: 18px 20px;
+      }
+
+      .skill-card.wide {
+        grid-column: 1/-1;
+      }
+
+      .skill-label {
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--ink-light);
+        margin-bottom: 9px;
+      }
+
+      .skill-list {
+        font-size: 13.5px;
+        color: var(--ink-mid);
+        line-height: 1.75;
+      }
+
+      /* ─── CONTACT ─── */
+      .contact-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 14px 18px;
+        border: 0.5px solid var(--rule);
+        border-radius: 9px;
+        text-decoration: none;
+        color: var(--ink);
+        font-size: 14px;
+        transition:
+          border-color 0.18s,
+          color 0.18s;
+        background: var(--paper);
+      }
+
+      .contact-link:hover {
+        border-color: var(--accent-border);
+        color: var(--accent);
+      }
+
+      .contact-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 0.5px solid var(--rule);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-family: var(--serif);
+        font-size: 13px;
+        color: var(--accent);
+        background: var(--accent-pale);
+      }
+
+      /* ─── FOOTER ─── */
+      footer {
+        padding-top: 48px;
+        text-align: center;
+      }
+
+      .foot-quote {
+        font-family: var(--serif);
+        font-size: 12.5px;
+        font-weight: 300;
+        font-style: italic;
+        color: var(--ink-light);
+        line-height: 1.9;
+      }
+
+      .foot-copy {
+        font-size: 10.5px;
+        letter-spacing: 0.12em;
+        color: var(--ink-light);
+        opacity: 0.4;
+        margin-top: 14px;
+      }
+
+      /* ─── RESPONSIVE ─── */
+      @media (max-width: 600px) {
         .wrap {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 64px 32px 96px;
-        }
-
-        /* ─── HERO ─── */
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding-bottom: 72px;
-            border-bottom: 0.5px solid var(--rule);
-        }
-
-        .mon {
-            position: relative;
-            width: 96px;
-            height: 96px;
-            margin-bottom: 32px;
-        }
-
-        .mon-ring-outer {
-            position: absolute;
-            inset: 0;
-            border: 0.5px solid var(--accent-border);
-            border-radius: 50%;
-        }
-
-        .mon-ring-inner {
-            position: absolute;
-            inset: 9px;
-            border: 0.5px solid var(--accent-border);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .mon-kanji {
-            font-family: var(--serif);
-            font-size: 26px;
-            font-weight: 300;
-            color: var(--accent);
-            letter-spacing: -1px;
-            /* 残心 - Japanese: 残 (zan) + 心 (shin), both correct JP kanji */
+          padding: 40px 20px 72px;
         }
 
         .hero-name {
-            font-family: var(--serif);
-            font-size: 34px;
-            font-weight: 700;
-            letter-spacing: 0.03em;
-            color: var(--ink);
-            margin-bottom: 8px;
-        }
-
-        .hero-role {
-            font-size: 13px;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--ink-light);
-            font-weight: 400;
-            margin-bottom: 24px;
-        }
-
-        .hero-quote {
-            font-family: var(--serif);
-            font-size: 13.5px;
-            font-weight: 300;
-            color: var(--ink-mid);
-            font-style: italic;
-            max-width: 420px;
-            line-height: 1.85;
-        }
-
-        .hero-quote cite {
-            display: block;
-            font-size: 11px;
-            letter-spacing: 0.14em;
-            color: var(--ink-light);
-            margin-top: 8px;
-            font-style: normal;
-            text-transform: uppercase;
-        }
-
-        /* ─── SECTIONS ─── */
-        .section {
-            padding: 60px 0;
-            border-bottom: 0.5px solid var(--rule);
-        }
-
-        .section:last-of-type {
-            border-bottom: none
-        }
-
-        .sec-header {
-            display: flex;
-            align-items: baseline;
-            gap: 14px;
-            margin-bottom: 36px;
-        }
-
-        .sec-kanji {
-            font-family: var(--serif);
-            font-size: 20px;
-            font-weight: 300;
-            color: var(--accent);
-            opacity: 0.45;
-            flex-shrink: 0;
-            line-height: 1;
-        }
-
-        .sec-title {
-            font-size: 10.5px;
-            letter-spacing: 0.24em;
-            text-transform: uppercase;
-            color: var(--ink-light);
-            font-weight: 500;
-        }
-
-        /* ─── ABOUT ─── */
-        .about-text {
-            font-size: 15px;
-            color: var(--ink-mid);
-            line-height: 1.85;
-        }
-
-        .about-text+.about-text {
-            margin-top: 14px
-        }
-
-        /* ─── FEATURED WORK ─── */
-        .project-card {
-            border: 0.5px solid var(--accent-border);
-            border-radius: 14px;
-            padding: 0;
-            background: var(--accent-pale);
-            overflow: hidden;
+          font-size: 26px;
         }
 
         .project-body {
-            padding: 28px 28px 0;
-        }
-
-        .project-head {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            margin-bottom: 18px;
-        }
-
-        .project-icon {
-            width: 46px;
-            height: 46px;
-            border: 0.5px solid var(--accent-border);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            flex-shrink: 0;
-            background: var(--paper);
-        }
-
-        .project-name {
-            font-family: var(--serif);
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--ink);
-            line-height: 1.2;
-        }
-
-        .project-sub {
-            font-size: 11px;
-            letter-spacing: 0.14em;
-            color: var(--ink-light);
-            text-transform: uppercase;
-            margin-top: 3px;
-        }
-
-        .project-desc {
-            font-size: 14px;
-            color: var(--ink-mid);
-            line-height: 1.82;
-            margin-bottom: 20px;
-        }
-
-        .stats {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 18px;
-        }
-
-        .stat {
-            font-size: 12px;
-            color: var(--accent);
-            border: 0.5px solid var(--accent-border);
-            border-radius: 4px;
-            padding: 3px 10px;
-            letter-spacing: 0.04em;
-        }
-
-        .tags {
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-            margin-bottom: 22px;
-        }
-
-        .tag {
-            font-size: 11px;
-            letter-spacing: 0.06em;
-            color: var(--ink-light);
-            border: 0.5px solid var(--rule);
-            border-radius: 3px;
-            padding: 2px 8px;
+          padding: 20px 20px 0;
         }
 
         .project-links {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 24px;
+          gap: 7px;
         }
-
-        .plink {
-            font-size: 12px;
-            letter-spacing: 0.08em;
-            color: var(--ink-mid);
-            border: 0.5px solid var(--rule);
-            border-radius: 6px;
-            padding: 7px 16px;
-            text-decoration: none;
-            transition: border-color .18s, color .18s;
-            background: var(--paper);
-        }
-
-        .plink:hover {
-            color: var(--accent);
-            border-color: var(--accent-border)
-        }
-
-        .plink.primary {
-            color: var(--accent);
-            border-color: var(--accent-border);
-        }
-
-        /* screenshot strip */
-        .project-screenshot {
-            width: 100%;
-            display: block;
-            border-top: 0.5px solid var(--accent-border);
-            max-height: 280px;
-            object-fit: cover;
-            object-position: top center;
-        }
-
-        /* ─── EXPERIENCE ─── */
-        .timeline {
-            position: relative;
-            padding-left: 22px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 10px;
-            bottom: 10px;
-            width: 0.5px;
-            background: var(--rule);
-        }
-
-        .exp-item {
-            position: relative;
-            padding-bottom: 36px;
-        }
-
-        .exp-item:last-child {
-            padding-bottom: 0
-        }
-
-        .exp-dot {
-            position: absolute;
-            left: -26px;
-            top: 7px;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            border: 0.5px solid var(--accent-border);
-            background: transparent;
-        }
-
-        .exp-item.active .exp-dot {
-            background: var(--accent);
-            border-color: var(--accent);
-        }
-
-        .exp-company {
-            font-size: 15px;
-            font-weight: 500;
-            color: var(--ink);
-            letter-spacing: 0.01em;
-        }
-
-        .exp-period {
-            font-size: 11px;
-            letter-spacing: 0.1em;
-            color: var(--ink-light);
-            margin-top: 1px;
-            margin-bottom: 3px;
-        }
-
-        .exp-role {
-            font-size: 12.5px;
-            color: var(--accent);
-            margin-bottom: 8px;
-            letter-spacing: 0.02em;
-        }
-
-        .exp-desc {
-            font-size: 14px;
-            color: var(--ink-mid);
-            line-height: 1.78;
-        }
-
-        /* ─── SKILLS ─── */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-
-        @media(max-width:520px) {
-            .skills-grid {
-                grid-template-columns: 1fr
-            }
-        }
-
-        .skill-card {
-            border: 0.5px solid var(--rule);
-            border-radius: 9px;
-            padding: 18px 20px;
-        }
-
-        .skill-card.wide {
-            grid-column: 1/-1
-        }
-
-        .skill-label {
-            font-size: 10px;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--ink-light);
-            margin-bottom: 9px;
-        }
-
-        .skill-list {
-            font-size: 13.5px;
-            color: var(--ink-mid);
-            line-height: 1.75;
-        }
-
-        /* ─── CONTACT ─── */
-        .contact-list {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding: 14px 18px;
-            border: 0.5px solid var(--rule);
-            border-radius: 9px;
-            text-decoration: none;
-            color: var(--ink);
-            font-size: 14px;
-            transition: border-color .18s, color .18s;
-            background: var(--paper);
-        }
-
-        .contact-link:hover {
-            border-color: var(--accent-border);
-            color: var(--accent)
-        }
-
-        .contact-icon {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            border: 0.5px solid var(--rule);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            font-family: var(--serif);
-            font-size: 13px;
-            color: var(--accent);
-            background: var(--accent-pale);
-        }
-
-        /* ─── FOOTER ─── */
-        footer {
-            padding-top: 48px;
-            text-align: center;
-        }
-
-        .foot-quote {
-            font-family: var(--serif);
-            font-size: 12.5px;
-            font-weight: 300;
-            font-style: italic;
-            color: var(--ink-light);
-            line-height: 1.9;
-        }
-
-        .foot-copy {
-            font-size: 10.5px;
-            letter-spacing: 0.12em;
-            color: var(--ink-light);
-            opacity: 0.4;
-            margin-top: 14px;
-        }
-
-        /* ─── RESPONSIVE ─── */
-        @media(max-width:600px) {
-            .wrap {
-                padding: 40px 20px 72px
-            }
-
-            .hero-name {
-                font-size: 26px
-            }
-
-            .project-body {
-                padding: 20px 20px 0
-            }
-
-            .project-links {
-                gap: 7px
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="wrap">
+      <!-- HERO -->
+      <header class="hero">
+        <div class="mon" aria-label="残心 - zanshin">
+          <div class="mon-ring-outer"></div>
+          <div class="mon-ring-inner">
+            <!-- 残心: 残 (zan/のこ) + 心 (shin/こころ) - Japanese kanji, not simplified Chinese -->
+            <span class="mon-kanji">残心</span>
+          </div>
+        </div>
+        <h1 class="hero-name">Jacek Janur</h1>
+        <p class="hero-role">Mobile Developer</p>
+        <p class="hero-quote">
+          "Zanshin - total awareness. Present during the work, and after."
+          <cite>- Takuan Sōhō</cite>
+        </p>
+      </header>
 
-        <!-- HERO -->
-        <header class="hero">
-            <div class="mon" aria-label="残心 - zanshin">
-                <div class="mon-ring-outer"></div>
-                <div class="mon-ring-inner">
-                    <!-- 残心: 残 (zan/のこ) + 心 (shin/こころ) - Japanese kanji, not simplified Chinese -->
-                    <span class="mon-kanji">残心</span>
+      <!-- ABOUT -->
+      <section class="section">
+        <div class="sec-header">
+          <span class="sec-kanji" aria-hidden="true">道</span>
+          <span class="sec-title">About</span>
+        </div>
+        <p class="about-text">
+          I'm a mobile developer who cares about the bigger picture. My approach is shaped by
+          zanshin - staying focused not just while building, but after. Code I can stand behind
+          tomorrow, next month, next year.
+        </p>
+        <p class="about-text" style="margin-top: 14px">
+          Over 4+ years I've learned that good software comes from understanding what happens after
+          you ship. Whether it's an app with thousands of users or an MVP testing a fresh idea - I
+          care about how it performs in the real world, and how it adapts to change.
+        </p>
+      </section>
+
+      <!-- FEATURED WORK -->
+      <section class="section">
+        <div class="sec-header">
+          <span class="sec-kanji" aria-hidden="true">作</span>
+          <span class="sec-title">Featured work</span>
+        </div>
+        <div class="project-card">
+          <!-- Tabs nav -->
+          <div style="display: flex; border-bottom: 0.5px solid var(--accent-border); gap: 0">
+            <button
+              id="tab-trawell"
+              onclick="switchProject(0)"
+              style="
+                flex: 1;
+                padding: 14px 16px;
+                font-size: 11px;
+                font-family: var(--sans);
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                cursor: pointer;
+                background: transparent;
+                border: none;
+                border-bottom: 2px solid var(--accent);
+                color: var(--accent);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                transition:
+                  color 0.18s,
+                  border-color 0.18s;
+              "
+            >
+              <span>✈️</span> Trawell
+            </button>
+            <button
+              id="tab-hanafuda"
+              onclick="switchProject(1)"
+              style="
+                flex: 1;
+                padding: 14px 16px;
+                font-size: 11px;
+                font-family: var(--sans);
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                cursor: pointer;
+                background: transparent;
+                border: none;
+                border-bottom: 2px solid transparent;
+                color: var(--ink-light);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                transition:
+                  color 0.18s,
+                  border-color 0.18s;
+              "
+            >
+              <span>🎴</span> Hanafuda
+            </button>
+          </div>
+
+          <!-- Panel: Trawell -->
+          <div id="panel-trawell">
+            <div class="project-body">
+              <div class="project-head">
+                <div class="project-icon">✈️</div>
+                <div>
+                  <div class="project-name">Trawell</div>
+                  <div class="project-sub">Travel City Game</div>
                 </div>
+              </div>
+              <p class="project-desc">
+                A mobile city-game I co-founded - turns exploring local landmarks into interactive
+                challenges. From concept to launch: UI/UX design, Flutter app, Django backend, and
+                the real work of listening to users.
+              </p>
+              <div class="stats">
+                <span class="stat">⭐ 4.6 / 5</span>
+                <span class="stat">📱 2,000+ downloads</span>
+                <span class="stat">💬 22+ reviews</span>
+              </div>
+              <div class="tags">
+                <span class="tag">Flutter</span>
+                <span class="tag">Django</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Figma</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://apps.apple.com/pl/app/trawell/id6450898028"
+                  target="_blank"
+                  class="plink primary"
+                  >App Store</a
+                >
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.allventures.trawell"
+                  target="_blank"
+                  class="plink"
+                  >Google Play</a
+                >
+                <a href="https://trawell.pl" target="_blank" class="plink">trawell.pl ↗</a>
+              </div>
             </div>
-            <h1 class="hero-name">Jacek Janur</h1>
-            <p class="hero-role">Mobile Developer</p>
-            <p class="hero-quote">
-                "Zanshin - total awareness. Present during the work, and after."
-                <cite>- Takuan Sōhō</cite>
+            <img
+              class="project-screenshot"
+              style="max-height: none; object-fit: contain; background: var(--paper)"
+              src="images/trawell.jpg"
+              alt="Zrzut ekranu aplikacji Trawell"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Panel: Hanafuda -->
+          <div id="panel-hanafuda" style="display: none">
+            <div class="project-body">
+              <div class="project-head">
+                <div class="project-icon">🎴</div>
+                <div>
+                  <div class="project-name">Hanafuda</div>
+                  <div class="project-sub">Koi-Koi rules</div>
+                </div>
+              </div>
+              <p class="project-desc">
+                Started this so my friends and I had somewhere to play Hanafuda online. Ended up
+                building the whole thing myself - frontend, backend, game logic. Simple goal, more
+                work than expected.
+              </p>
+              <div class="tags">
+                <span class="tag">React</span>
+                <span class="tag">Ruby on Rails</span>
+                <span class="tag">Game logic</span>
+              </div>
+              <div class="project-links">
+                <a href="https://hanafuda.jacekjanur.com" target="_blank" class="plink primary"
+                  >hanafuda.jacekjanur.com ↗</a
+                >
+              </div>
+
+              <p
+                style="
+                  font-size: 11.5px;
+                  color: var(--ink-light);
+                  font-style: italic;
+                  margin-bottom: 22px;
+                  line-height: 1.65;
+                "
+              >
+                ⚠ API runs on a free tier, may take a moment to wake up on first load.
+              </p>
+            </div>
+            <img
+              class="project-screenshot"
+              style="max-height: none; object-fit: contain; background: var(--paper)"
+              src="images/hanafuda.png"
+              alt="Zrzut ekranu aplikacji Hanafuda"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="section">
+        <div class="sec-header">
+          <span class="sec-kanji" aria-hidden="true">経</span>
+          <span class="sec-title">Experience</span>
+        </div>
+        <div class="timeline">
+          <div class="exp-item active">
+            <div class="exp-dot"></div>
+            <div class="exp-company">Deployed</div>
+            <div class="exp-period">July 2024 - Present</div>
+            <div class="exp-role">Mobile Developer</div>
+            <p class="exp-desc">
+              Building native Android apps and maintaining React Native codebases. Working directly
+              with clients - from Bluetooth integration to bug tracking, start to finish.
             </p>
-        </header>
+          </div>
 
-        <!-- ABOUT -->
-        <section class="section">
-            <div class="sec-header">
-                <span class="sec-kanji" aria-hidden="true">道</span>
-                <span class="sec-title">About</span>
-            </div>
-            <p class="about-text">
-                I'm a mobile developer who cares about the bigger picture. My approach is shaped by zanshin - staying
-                focused not just while building, but after. Code I can stand behind tomorrow, next month, next year.
+          <div class="exp-item active">
+            <div class="exp-dot"></div>
+            <div class="exp-company">Allventures</div>
+            <div class="exp-period">May 2022 - May 2026</div>
+            <div class="exp-role">Co-Founder & Lead Mobile Developer</div>
+            <p class="exp-desc">
+              Co-founded Trawell. Designed the UI/UX, built the backend API, and learned that
+              listening to users matters as much as writing good code. 1,800+ downloads, 4.6/5
+              rating.
             </p>
-            <p class="about-text" style="margin-top:14px">
-                Over 4+ years I've learned that good software comes from understanding what happens after you ship.
-                Whether it's an app with thousands of users or an MVP testing a fresh idea - I care about how it
-                performs in the real world, and how it adapts to change.
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-company">Tech in Shot PSA</div>
+            <div class="exp-period">November 2022 - June 2024</div>
+            <div class="exp-role">Flutter Developer</div>
+            <p class="exp-desc">
+              Mobile and desktop apps in Flutter. Payment systems, booking features, rapid MVP
+              development - seeing different approaches work (and fail) in the real world.
             </p>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- FEATURED WORK -->
-        <section class="section">
-            <div class="sec-header">
-                <span class="sec-kanji" aria-hidden="true">作</span>
-                <span class="sec-title">Featured work</span>
+      <!-- SKILLS -->
+      <section class="section">
+        <div class="sec-header">
+          <span class="sec-kanji" aria-hidden="true">技</span>
+          <span class="sec-title">Skills</span>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-label">Mobile</div>
+            <div class="skill-list">Flutter · Dart · React Native · Kotlin · Jetpack Compose</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-label">Backend & tools</div>
+            <div class="skill-list">Django · PostgreSQL · REST APIs · Laravel · Figma · Stripe</div>
+          </div>
+          <div class="skill-card wide">
+            <div class="skill-label">Collaboration</div>
+            <div class="skill-list">
+              Requirements gathering · Client communication · Technical documentation · Bug tracking
+              · User feedback · Product roadmap
             </div>
-            <div class="project-card">
-                <div class="project-body">
-                    <div class="project-head">
-                        <div class="project-icon">✈️</div>
-                        <div>
-                            <div class="project-name">Trawell</div>
-                            <div class="project-sub">Travel City Game</div>
-                        </div>
-                    </div>
-                    <p class="project-desc">
-                        A mobile city-game I co-founded - turns exploring local landmarks into interactive challenges.
-                        From concept to launch: UI/UX design, Flutter app, Django backend, and the real work of
-                        listening to users.
-                    </p>
-                    <div class="stats">
-                        <span class="stat">⭐ 4.6 / 5</span>
-                        <span class="stat">📱 2,000+ downloads</span>
-                        <span class="stat">💬 22+ reviews</span>
-                    </div>
-                    <div class="tags">
-                        <span class="tag">Flutter</span>
-                        <span class="tag">Django</span>
-                        <span class="tag">PostgreSQL</span>
-                        <span class="tag">Figma</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://apps.apple.com/pl/app/trawell/id6450898028" target="_blank"
-                            class="plink primary">App Store</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.allventures.trawell" target="_blank"
-                            class="plink">Google Play</a>
-                        <a href="https://trawell.pl" target="_blank" class="plink">trawell.pl ↗</a>
-                    </div>
-                </div>
-                <!-- screenshot - plik images/trawell.jpg musi być w tym samym folderze co index.html -->
-                <img class="project-screenshot" src="images/trawell.jpg" alt="Zrzut ekranu aplikacji Trawell"
-                    loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section">
+        <div class="sec-header">
+          <span class="sec-kanji" aria-hidden="true">縁</span>
+          <span class="sec-title">Contact</span>
+        </div>
+        <div class="contact-list">
+          <a class="contact-link" href="mailto:hello@jacekjanur.com">
+            <div class="contact-icon">✉</div>
+            hello@jacekjanur.com
+          </a>
+          <a class="contact-link" href="https://linkedin.com/in/jacek-janur/" target="_blank">
+            <div
+              class="contact-icon"
+              style="font-family: var(--sans); font-weight: 500; font-size: 11px; letter-spacing: 0"
+            >
+              in
             </div>
-        </section>
+            linkedin.com/in/jacek-janur
+          </a>
+        </div>
+      </section>
 
-        <!-- EXPERIENCE -->
-        <section class="section">
-            <div class="sec-header">
-                <span class="sec-kanji" aria-hidden="true">経</span>
-                <span class="sec-title">Experience</span>
-            </div>
-            <div class="timeline">
-
-                <div class="exp-item active">
-                    <div class="exp-dot"></div>
-                    <div class="exp-company">Deployed</div>
-                    <div class="exp-period">July 2024 - Present</div>
-                    <div class="exp-role">Mobile Developer</div>
-                    <p class="exp-desc">Building native Android apps and maintaining React Native codebases. Working
-                        directly with clients - from Bluetooth integration to bug tracking, start to finish.</p>
-                </div>
-
-                <div class="exp-item active">
-                    <div class="exp-dot"></div>
-                    <div class="exp-company">Allventures</div>
-                    <div class="exp-period">May 2022 - May 2026</div>
-                    <div class="exp-role">Co-Founder & Lead Mobile Developer</div>
-                    <p class="exp-desc">Co-founded Trawell. Designed the UI/UX, built the backend API, and learned that
-                        listening to users matters as much as writing good code. 1,800+ downloads, 4.6/5 rating.</p>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-dot"></div>
-                    <div class="exp-company">Tech in Shot PSA</div>
-                    <div class="exp-period">November 2022 - June 2024</div>
-                    <div class="exp-role">Flutter Developer</div>
-                    <p class="exp-desc">Mobile and desktop apps in Flutter. Payment systems, booking features, rapid MVP
-                        development - seeing different approaches work (and fail) in the real world.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- SKILLS -->
-        <section class="section">
-            <div class="sec-header">
-                <span class="sec-kanji" aria-hidden="true">技</span>
-                <span class="sec-title">Skills</span>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-label">Mobile</div>
-                    <div class="skill-list">Flutter · Dart · React Native · Kotlin · Jetpack Compose</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-label">Backend & tools</div>
-                    <div class="skill-list">Django · PostgreSQL · REST APIs · Laravel · Figma · Stripe</div>
-                </div>
-                <div class="skill-card wide">
-                    <div class="skill-label">Collaboration</div>
-                    <div class="skill-list">Requirements gathering · Client communication · Technical documentation ·
-                        Bug tracking · User feedback · Product roadmap</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section class="section">
-            <div class="sec-header">
-                <span class="sec-kanji" aria-hidden="true">縁</span>
-                <span class="sec-title">Contact</span>
-            </div>
-            <div class="contact-list">
-                <a class="contact-link" href="mailto:hello@jacekjanur.com">
-                    <div class="contact-icon">✉</div>
-                    hello@jacekjanur.com
-                </a>
-                <a class="contact-link" href="https://linkedin.com/in/jacek-janur/" target="_blank">
-                    <div class="contact-icon"
-                        style="font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:0">in</div>
-                    linkedin.com/in/jacek-janur
-                </a>
-            </div>
-        </section>
-
-        <!-- FOOTER -->
-        <footer>
-            <p class="foot-quote">"Vision without action is a daydream. Action without vision is a nightmare."</p>
-            <p class="foot-copy">© 2026 Jacek Janur</p>
-        </footer>
-
+      <!-- FOOTER -->
+      <footer>
+        <p class="foot-quote">
+          "Vision without action is a daydream. Action without vision is a nightmare."
+        </p>
+        <p class="foot-copy">© 2026 Jacek Janur</p>
+      </footer>
     </div>
-</body>
-
+  </body>
 </html>
+
+<script>
+  function switchProject(idx) {
+    var panels = ['panel-trawell', 'panel-hanafuda'];
+    var tabs = ['tab-trawell', 'tab-hanafuda'];
+    panels.forEach(function (id, i) {
+      document.getElementById(id).style.display = i === idx ? 'block' : 'none';
+    });
+    tabs.forEach(function (id, i) {
+      var el = document.getElementById(id);
+      el.style.borderBottom = i === idx ? '2px solid var(--accent)' : '2px solid transparent';
+      el.style.color = i === idx ? 'var(--accent)' : 'var(--ink-light)';
+    });
+  }
+</script>
