@@ -18,45 +18,52 @@
       }
 
       :root {
-        --ink: #1a1a1a;
-        --ink-mid: #555;
-        --ink-light: #888;
-        --paper: #faf8f4;
-        --accent: #0e6e55;
-        --accent-pale: rgba(14, 110, 85, 0.07);
-        --accent-border: rgba(14, 110, 85, 0.18);
-        --rule: rgba(0, 0, 0, 0.07);
+        --ink: #28211e;
+        --ink-mid: rgba(40, 33, 30, 0.72);
+        --ink-light: rgba(40, 33, 30, 0.5);
+        --paper: #f2ecdf;
+        --surface: #fffcf5;
+        --accent: #1f7d5c;
+        --accent-hover: #175f46;
+        --accent-pale: rgba(31, 125, 92, 0.08);
+        --accent-pale-hover: rgba(31, 125, 92, 0.16);
+        --accent-border: rgba(31, 125, 92, 0.3);
+        --accent-border-hover: rgba(31, 125, 92, 0.5);
+        --rule: rgba(40, 33, 30, 0.08);
+        --rule-medium: rgba(40, 33, 30, 0.12);
+        --shadow-surface: 0 16px 48px rgba(40, 33, 30, 0.1);
         --serif: 'Noto Serif JP', serif;
         --sans: 'DM Sans', sans-serif;
+        --pattern-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='22'%3E%3Cellipse cx='20' cy='22' rx='20' ry='14' fill='none' stroke='%231f7d5c' stroke-width='0.4' stroke-opacity='0.15'/%3E%3Cellipse cx='0' cy='22' rx='20' ry='14' fill='none' stroke='%231f7d5c' stroke-width='0.4' stroke-opacity='0.15'/%3E%3Cellipse cx='40' cy='22' rx='20' ry='14' fill='none' stroke='%231f7d5c' stroke-width='0.4' stroke-opacity='0.15'/%3E%3Cellipse cx='10' cy='11' rx='20' ry='14' fill='none' stroke='%231f7d5c' stroke-width='0.4' stroke-opacity='0.15'/%3E%3Cellipse cx='30' cy='11' rx='20' ry='14' fill='none' stroke='%231f7d5c' stroke-width='0.4' stroke-opacity='0.15'/%3E%3C/svg%3E");
       }
 
       @media (prefers-color-scheme: dark) {
         :root {
-          --ink: #e8e5df;
-          --ink-mid: #aaa;
-          --ink-light: #5a5a5a;
-          --paper: #131311;
-          --accent: #2ead87;
-          --accent-pale: rgba(46, 173, 135, 0.06);
-          --accent-border: rgba(46, 173, 135, 0.16);
-          --rule: rgba(255, 255, 255, 0.06);
+          --ink: #faf3e8;
+          --ink-mid: rgba(250, 243, 232, 0.84);
+          --ink-light: rgba(250, 243, 232, 0.62);
+          --paper: rgb(45, 41, 49);
+          --surface: rgb(58, 53, 62);
+          --accent: #3fb494;
+          --accent-hover: #319b7d;
+          --accent-pale: rgba(63, 180, 148, 0.1);
+          --accent-pale-hover: rgba(63, 180, 148, 0.2);
+          --accent-border: rgba(63, 180, 148, 0.34);
+          --accent-border-hover: rgba(63, 180, 148, 0.54);
+          --rule: rgba(255, 246, 230, 0.13);
+          --rule-medium: rgba(255, 246, 230, 0.17);
+          --shadow-surface: 0 24px 64px rgba(0, 0, 0, 0.4);
+          --pattern-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='22'%3E%3Cellipse cx='20' cy='22' rx='20' ry='14' fill='none' stroke='%233fb494' stroke-width='0.4' stroke-opacity='0.16'/%3E%3Cellipse cx='0' cy='22' rx='20' ry='14' fill='none' stroke='%233fb494' stroke-width='0.4' stroke-opacity='0.16'/%3E%3Cellipse cx='40' cy='22' rx='20' ry='14' fill='none' stroke='%233fb494' stroke-width='0.4' stroke-opacity='0.16'/%3E%3Cellipse cx='10' cy='11' rx='20' ry='14' fill='none' stroke='%233fb494' stroke-width='0.4' stroke-opacity='0.16'/%3E%3Cellipse cx='30' cy='11' rx='20' ry='14' fill='none' stroke='%233fb494' stroke-width='0.4' stroke-opacity='0.16'/%3E%3C/svg%3E");
         }
       }
 
-      /* ─── SEIGAIHA BACKGROUND ─── */
       body {
         font-family: var(--sans);
         background-color: var(--paper);
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='22'%3E%3Cellipse cx='20' cy='22' rx='20' ry='14' fill='none' stroke='%230e6e55' stroke-width='0.4' stroke-opacity='0.09'/%3E%3Cellipse cx='0' cy='22' rx='20' ry='14' fill='none' stroke='%230e6e55' stroke-width='0.4' stroke-opacity='0.09'/%3E%3Cellipse cx='40' cy='22' rx='20' ry='14' fill='none' stroke='%230e6e55' stroke-width='0.4' stroke-opacity='0.09'/%3E%3Cellipse cx='10' cy='11' rx='20' ry='14' fill='none' stroke='%230e6e55' stroke-width='0.4' stroke-opacity='0.09'/%3E%3Cellipse cx='30' cy='11' rx='20' ry='14' fill='none' stroke='%230e6e55' stroke-width='0.4' stroke-opacity='0.09'/%3E%3C/svg%3E");
+        background-image: var(--pattern-svg);
         background-size: 40px 22px;
         color: var(--ink);
         min-height: 100vh;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        body {
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='22'%3E%3Cellipse cx='20' cy='22' rx='20' ry='14' fill='none' stroke='%232ead87' stroke-width='0.4' stroke-opacity='0.07'/%3E%3Cellipse cx='0' cy='22' rx='20' ry='14' fill='none' stroke='%232ead87' stroke-width='0.4' stroke-opacity='0.07'/%3E%3Cellipse cx='40' cy='22' rx='20' ry='14' fill='none' stroke='%232ead87' stroke-width='0.4' stroke-opacity='0.07'/%3E%3Cellipse cx='10' cy='11' rx='20' ry='14' fill='none' stroke='%232ead87' stroke-width='0.4' stroke-opacity='0.07'/%3E%3Cellipse cx='30' cy='11' rx='20' ry='14' fill='none' stroke='%232ead87' stroke-width='0.4' stroke-opacity='0.07'/%3E%3C/svg%3E");
-        }
       }
 
       .wrap {
@@ -65,7 +72,6 @@
         padding: 64px 32px 96px;
       }
 
-      /* ─── HERO ─── */
       .hero {
         display: flex;
         flex-direction: column;
@@ -97,6 +103,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        background: var(--accent-pale);
       }
 
       .mon-kanji {
@@ -105,7 +112,6 @@
         font-weight: 300;
         color: var(--accent);
         letter-spacing: -1px;
-        /* 残心 - Japanese: 残 (zan) + 心 (shin), both correct JP kanji */
       }
 
       .hero-name {
@@ -146,7 +152,6 @@
         text-transform: uppercase;
       }
 
-      /* ─── SECTIONS ─── */
       .section {
         padding: 60px 0;
         border-bottom: 0.5px solid var(--rule);
@@ -168,7 +173,7 @@
         font-size: 20px;
         font-weight: 300;
         color: var(--accent);
-        opacity: 0.45;
+        opacity: 0.5;
         flex-shrink: 0;
         line-height: 1;
       }
@@ -181,7 +186,6 @@
         font-weight: 500;
       }
 
-      /* ─── ABOUT ─── */
       .about-text {
         font-size: 15px;
         color: var(--ink-mid);
@@ -192,13 +196,13 @@
         margin-top: 14px;
       }
 
-      /* ─── FEATURED WORK ─── */
       .project-card {
         border: 0.5px solid var(--accent-border);
         border-radius: 14px;
         padding: 0;
         background: var(--accent-pale);
         overflow: hidden;
+        box-shadow: var(--shadow-surface);
       }
 
       .project-body {
@@ -222,7 +226,7 @@
         justify-content: center;
         font-size: 22px;
         flex-shrink: 0;
-        background: var(--paper);
+        background: var(--surface);
       }
 
       .project-name {
@@ -298,12 +302,12 @@
         transition:
           border-color 0.18s,
           color 0.18s;
-        background: var(--paper);
+        background: var(--surface);
       }
 
       .plink:hover {
-        color: var(--accent);
-        border-color: var(--accent-border);
+        color: var(--accent-hover);
+        border-color: var(--accent-border-hover);
       }
 
       .plink.primary {
@@ -311,7 +315,6 @@
         border-color: var(--accent-border);
       }
 
-      /* screenshot strip */
       .project-screenshot {
         width: 100%;
         display: block;
@@ -321,7 +324,6 @@
         object-position: top center;
       }
 
-      /* ─── EXPERIENCE ─── */
       .timeline {
         position: relative;
         padding-left: 22px;
@@ -390,7 +392,6 @@
         line-height: 1.78;
       }
 
-      /* ─── SKILLS ─── */
       .skills-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -407,6 +408,7 @@
         border: 0.5px solid var(--rule);
         border-radius: 9px;
         padding: 18px 20px;
+        background: var(--surface);
       }
 
       .skill-card.wide {
@@ -427,7 +429,6 @@
         line-height: 1.75;
       }
 
-      /* ─── CONTACT ─── */
       .contact-list {
         display: flex;
         flex-direction: column;
@@ -447,12 +448,12 @@
         transition:
           border-color 0.18s,
           color 0.18s;
-        background: var(--paper);
+        background: var(--surface);
       }
 
       .contact-link:hover {
-        border-color: var(--accent-border);
-        color: var(--accent);
+        border-color: var(--accent-border-hover);
+        color: var(--accent-hover);
       }
 
       .contact-icon {
@@ -470,7 +471,6 @@
         background: var(--accent-pale);
       }
 
-      /* ─── FOOTER ─── */
       footer {
         padding-top: 48px;
         text-align: center;
@@ -493,7 +493,6 @@
         margin-top: 14px;
       }
 
-      /* ─── RESPONSIVE ─── */
       @media (max-width: 600px) {
         .wrap {
           padding: 40px 20px 72px;
@@ -516,12 +515,10 @@
 
   <body>
     <div class="wrap">
-      <!-- HERO -->
       <header class="hero">
         <div class="mon" aria-label="残心 - zanshin">
           <div class="mon-ring-outer"></div>
           <div class="mon-ring-inner">
-            <!-- 残心: 残 (zan/のこ) + 心 (shin/こころ) - Japanese kanji, not simplified Chinese -->
             <span class="mon-kanji">残心</span>
           </div>
         </div>
@@ -533,7 +530,6 @@
         </p>
       </header>
 
-      <!-- ABOUT -->
       <section class="section">
         <div class="sec-header">
           <span class="sec-kanji" aria-hidden="true">道</span>
@@ -551,14 +547,12 @@
         </p>
       </section>
 
-      <!-- FEATURED WORK -->
       <section class="section">
         <div class="sec-header">
           <span class="sec-kanji" aria-hidden="true">作</span>
           <span class="sec-title">Featured work</span>
         </div>
         <div class="project-card">
-          <!-- Tabs nav -->
           <div style="display: flex; border-bottom: 0.5px solid var(--accent-border); gap: 0">
             <button
               id="tab-trawell"
@@ -614,7 +608,6 @@
             </button>
           </div>
 
-          <!-- Panel: Trawell -->
           <div id="panel-trawell">
             <div class="project-body">
               <div class="project-head">
@@ -658,14 +651,13 @@
             </div>
             <img
               class="project-screenshot"
-              style="max-height: none; object-fit: contain; background: var(--paper)"
+              style="max-height: none; object-fit: contain; background: var(--surface)"
               src="images/trawell.jpg"
               alt="Zrzut ekranu aplikacji Trawell"
               loading="lazy"
             />
           </div>
 
-          <!-- Panel: Hanafuda -->
           <div id="panel-hanafuda" style="display: none">
             <div class="project-body">
               <div class="project-head">
@@ -705,7 +697,7 @@
             </div>
             <img
               class="project-screenshot"
-              style="max-height: none; object-fit: contain; background: var(--paper)"
+              style="max-height: none; object-fit: contain; background: var(--surface)"
               src="images/hanafuda.png"
               alt="Zrzut ekranu aplikacji Hanafuda"
               loading="lazy"
@@ -714,7 +706,6 @@
         </div>
       </section>
 
-      <!-- EXPERIENCE -->
       <section class="section">
         <div class="sec-header">
           <span class="sec-kanji" aria-hidden="true">経</span>
@@ -724,7 +715,7 @@
           <div class="exp-item active">
             <div class="exp-dot"></div>
             <div class="exp-company">Deployed</div>
-            <div class="exp-period">July 2024 - Present</div>
+            <div class="exp-period">July 2024 - June 2026</div>
             <div class="exp-role">Mobile Developer</div>
             <p class="exp-desc">
               Building native Android apps and maintaining React Native codebases. Working directly
@@ -757,7 +748,6 @@
         </div>
       </section>
 
-      <!-- SKILLS -->
       <section class="section">
         <div class="sec-header">
           <span class="sec-kanji" aria-hidden="true">技</span>
@@ -782,7 +772,6 @@
         </div>
       </section>
 
-      <!-- CONTACT -->
       <section class="section">
         <div class="sec-header">
           <span class="sec-kanji" aria-hidden="true">縁</span>
@@ -805,7 +794,6 @@
         </div>
       </section>
 
-      <!-- FOOTER -->
       <footer>
         <p class="foot-quote">
           "Vision without action is a daydream. Action without vision is a nightmare."
