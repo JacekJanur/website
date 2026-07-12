@@ -1,9 +1,39 @@
 <!doctype html>
-<html lang="pl">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jacek Janur - Mobile Developer</title>
+    <meta
+      name="description"
+      content="Mobile developer building reliable products from idea to production with Flutter, Kotlin, React Native and backend technologies."
+    />
+    <meta name="author" content="Jacek Janur" />
+    <link rel="canonical" href="https://jacekjanur.com/" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2328211e'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%233fb494'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-size='22' fill='%233fb494'%3E残%3C/text%3E%3C/svg%3E"
+    />
+    <meta name="theme-color" content="#28211e" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#2d2931" media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jacekjanur.com/" />
+    <meta property="og:title" content="Jacek Janur - Mobile Developer" />
+    <meta
+      property="og:description"
+      content="Mobile developer building reliable products from idea to production."
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jacek Janur",
+        "url": "https://jacekjanur.com/",
+        "jobTitle": "Mobile Developer",
+        "email": "mailto:hello@jacekjanur.com",
+        "sameAs": ["https://linkedin.com/in/jacek-janur/"]
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -66,6 +96,34 @@
         min-height: 100vh;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 4px;
+      }
+
+      .skip-link {
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 10;
+        padding: 9px 14px;
+        border-radius: 6px;
+        color: var(--surface);
+        background: var(--accent);
+        text-decoration: none;
+        transform: translateY(-160%);
+        transition: transform 0.18s;
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
       .wrap {
         max-width: 800px;
         margin: 0 auto;
@@ -77,7 +135,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding-bottom: 72px;
+        padding-bottom: 56px;
         border-bottom: 0.5px solid var(--rule);
       }
 
@@ -142,6 +200,59 @@
         line-height: 1.85;
       }
 
+      .hero-intro {
+        max-width: 570px;
+        font-size: 17px;
+        line-height: 1.7;
+        color: var(--ink-mid);
+      }
+
+      .hero-tech {
+        margin-top: 10px;
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        color: var(--ink-light);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 28px;
+      }
+
+      .button-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        padding: 9px 18px;
+        border: 0.5px solid var(--accent-border);
+        border-radius: 7px;
+        color: var(--accent);
+        background: var(--accent-pale);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        transition:
+          background 0.18s,
+          border-color 0.18s,
+          color 0.18s;
+      }
+
+      .button-link:hover {
+        color: var(--accent-hover);
+        border-color: var(--accent-border-hover);
+        background: var(--accent-pale-hover);
+      }
+
+      .button-link.secondary {
+        color: var(--ink-mid);
+        border-color: var(--rule-medium);
+        background: var(--surface);
+      }
+
       .hero-quote cite {
         display: block;
         font-size: 11px;
@@ -184,6 +295,10 @@
         text-transform: uppercase;
         color: var(--ink-light);
         font-weight: 500;
+      }
+
+      h2.sec-title {
+        line-height: inherit;
       }
 
       .about-text {
@@ -252,6 +367,28 @@
         margin-bottom: 20px;
       }
 
+      .project-highlights {
+        display: grid;
+        gap: 9px;
+        margin: 0 0 22px;
+        list-style: none;
+      }
+
+      .project-highlights li {
+        position: relative;
+        padding-left: 18px;
+        font-size: 13.5px;
+        line-height: 1.65;
+        color: var(--ink-mid);
+      }
+
+      .project-highlights li::before {
+        content: '-';
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+      }
+
       .stats {
         display: flex;
         gap: 8px;
@@ -308,6 +445,11 @@
       .plink:hover {
         color: var(--accent-hover);
         border-color: var(--accent-border-hover);
+      }
+
+      .plink:focus-visible,
+      .contact-link:focus-visible {
+        border-color: var(--accent);
       }
 
       .plink.primary {
@@ -502,6 +644,14 @@
           font-size: 26px;
         }
 
+        .hero {
+          padding-bottom: 48px;
+        }
+
+        .hero-intro {
+          font-size: 15px;
+        }
+
         .project-body {
           padding: 20px 20px 0;
         }
@@ -514,7 +664,8 @@
   </head>
 
   <body>
-    <div class="wrap">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <main class="wrap" id="main-content">
       <header class="hero">
         <div class="mon" aria-label="残心 - zanshin">
           <div class="mon-ring-outer"></div>
@@ -524,39 +675,50 @@
         </div>
         <h1 class="hero-name">Jacek Janur</h1>
         <p class="hero-role">Mobile Developer</p>
-        <p class="hero-quote">
-          "Zanshin - total awareness. Present during the work, and after."
-          <cite>- Takuan Sōhō</cite>
+        <p class="hero-intro">
+          I build reliable mobile products from idea to production - combining product thinking,
+          thoughtful interfaces and code that stays maintainable after launch.
         </p>
+        <p class="hero-tech">Flutter · Kotlin · React Native · Backend</p>
+        <nav class="hero-actions" aria-label="Primary">
+          <a class="button-link" href="#work">View my work</a>
+          <a class="button-link secondary" href="#contact">Contact me</a>
+        </nav>
       </header>
 
-      <section class="section">
+      <section class="section" aria-labelledby="about-title">
         <div class="sec-header">
           <span class="sec-kanji" aria-hidden="true">道</span>
-          <span class="sec-title">About</span>
+          <h2 class="sec-title" id="about-title">About</h2>
         </div>
         <p class="about-text">
-          I'm a mobile developer who cares about the bigger picture. My approach is shaped by
-          zanshin - staying focused not just while building, but after. Code I can stand behind
-          tomorrow, next month, next year.
-        </p>
-        <p class="about-text" style="margin-top: 14px">
-          Over 4+ years I've learned that good software comes from understanding what happens after
-          you ship. Whether it's an app with thousands of users or an MVP testing a fresh idea - I
-          care about how it performs in the real world, and how it adapts to change.
+          Over 4+ years I've worked across the full product lifecycle: gathering requirements,
+          designing interfaces, building mobile apps and APIs, shipping to stores and learning from
+          real users. My approach is shaped by <em>zanshin</em> - staying focused not only while
+          building, but after the product reaches the real world.
         </p>
       </section>
 
-      <section class="section">
+      <section class="section" id="work" aria-labelledby="work-title">
         <div class="sec-header">
           <span class="sec-kanji" aria-hidden="true">作</span>
-          <span class="sec-title">Featured work</span>
+          <h2 class="sec-title" id="work-title">Featured work</h2>
         </div>
         <div class="project-card">
-          <div style="display: flex; border-bottom: 0.5px solid var(--accent-border); gap: 0">
+          <div
+            role="tablist"
+            aria-label="Featured projects"
+            style="display: flex; border-bottom: 0.5px solid var(--accent-border); gap: 0"
+          >
             <button
               id="tab-trawell"
+              role="tab"
+              type="button"
+              aria-selected="true"
+              aria-controls="panel-trawell"
+              tabindex="0"
               onclick="switchProject(0)"
+              onkeydown="handleTabKey(event, 0)"
               style="
                 flex: 1;
                 padding: 14px 16px;
@@ -582,7 +744,13 @@
             </button>
             <button
               id="tab-hanafuda"
+              role="tab"
+              type="button"
+              aria-selected="false"
+              aria-controls="panel-hanafuda"
+              tabindex="-1"
               onclick="switchProject(1)"
+              onkeydown="handleTabKey(event, 1)"
               style="
                 flex: 1;
                 padding: 14px 16px;
@@ -608,20 +776,25 @@
             </button>
           </div>
 
-          <div id="panel-trawell">
+          <div id="panel-trawell" role="tabpanel" aria-labelledby="tab-trawell">
             <div class="project-body">
               <div class="project-head">
                 <div class="project-icon">✈️</div>
                 <div>
-                  <div class="project-name">Trawell</div>
+                  <h3 class="project-name">Trawell</h3>
                   <div class="project-sub">Travel City Game</div>
                 </div>
               </div>
               <p class="project-desc">
-                A mobile city-game I co-founded - turns exploring local landmarks into interactive
-                challenges. From concept to launch: UI/UX design, Flutter app, Django backend, and
-                the real work of listening to users.
+                A location-based city game that turns exploring local landmarks into interactive
+                challenges. I co-founded the product and helped take it from concept to the App
+                Store and Google Play.
               </p>
+              <ul class="project-highlights">
+                <li><strong>Built:</strong> UI/UX, Flutter app and Django REST API.</li>
+                <li><strong>Owned:</strong> product discovery, releases and user feedback.</li>
+                <li><strong>Result:</strong> 2,000+ downloads, 22+ reviews and a 4.6/5 rating.</li>
+              </ul>
               <div class="stats">
                 <span class="stat">⭐ 4.6 / 5</span>
                 <span class="stat">📱 2,000+ downloads</span>
@@ -637,16 +810,20 @@
                 <a
                   href="https://apps.apple.com/pl/app/trawell/id6450898028"
                   target="_blank"
+                  rel="noopener noreferrer"
                   class="plink primary"
                   >App Store</a
                 >
                 <a
                   href="https://play.google.com/store/apps/details?id=com.allventures.trawell"
                   target="_blank"
+                  rel="noopener noreferrer"
                   class="plink"
                   >Google Play</a
                 >
-                <a href="https://trawell.pl" target="_blank" class="plink">trawell.pl ↗</a>
+                <a href="https://trawell.pl" target="_blank" rel="noopener noreferrer" class="plink"
+                  >trawell.pl ↗</a
+                >
               </div>
             </div>
             <img
@@ -658,27 +835,39 @@
             />
           </div>
 
-          <div id="panel-hanafuda" style="display: none">
+          <div id="panel-hanafuda" role="tabpanel" aria-labelledby="tab-hanafuda" hidden>
             <div class="project-body">
               <div class="project-head">
                 <div class="project-icon">🎴</div>
                 <div>
-                  <div class="project-name">Hanafuda</div>
+                  <h3 class="project-name">Hanafuda</h3>
                   <div class="project-sub">Koi-Koi rules</div>
                 </div>
               </div>
               <p class="project-desc">
-                Started this so my friends and I had somewhere to play Hanafuda online. Ended up
-                building the whole thing myself - frontend, backend, game logic. Simple goal, more
-                work than expected.
+                An online Koi-Koi game I created so friends could play Hanafuda together. I designed
+                and built the complete product, from game rules to deployment.
               </p>
+              <ul class="project-highlights">
+                <li>
+                  <strong>Built:</strong> React frontend, Rails backend and complete game logic.
+                </li>
+                <li>
+                  <strong>Solved:</strong> turn flow, scoring and consistent multiplayer state.
+                </li>
+                <li><strong>Scope:</strong> independent end-to-end product and deployment.</li>
+              </ul>
               <div class="tags">
                 <span class="tag">React</span>
                 <span class="tag">Ruby on Rails</span>
                 <span class="tag">Game logic</span>
               </div>
               <div class="project-links">
-                <a href="https://hanafuda.jacekjanur.com" target="_blank" class="plink primary"
+                <a
+                  href="https://hanafuda.jacekjanur.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="plink primary"
                   >hanafuda.jacekjanur.com ↗</a
                 >
               </div>
@@ -706,13 +895,13 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" aria-labelledby="experience-title">
         <div class="sec-header">
           <span class="sec-kanji" aria-hidden="true">経</span>
-          <span class="sec-title">Experience</span>
+          <h2 class="sec-title" id="experience-title">Experience</h2>
         </div>
         <div class="timeline">
-          <div class="exp-item active">
+          <div class="exp-item">
             <div class="exp-dot"></div>
             <div class="exp-company">Deployed</div>
             <div class="exp-period">July 2024 - June 2026</div>
@@ -723,14 +912,14 @@
             </p>
           </div>
 
-          <div class="exp-item active">
+          <div class="exp-item">
             <div class="exp-dot"></div>
             <div class="exp-company">Allventures</div>
             <div class="exp-period">May 2022 - May 2026</div>
             <div class="exp-role">Co-Founder & Lead Mobile Developer</div>
             <p class="exp-desc">
               Co-founded Trawell. Designed the UI/UX, built the backend API, and learned that
-              listening to users matters as much as writing good code. 1,800+ downloads, 4.6/5
+              listening to users matters as much as writing good code. 2,000+ downloads, 4.6/5
               rating.
             </p>
           </div>
@@ -748,10 +937,10 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" aria-labelledby="skills-title">
         <div class="sec-header">
           <span class="sec-kanji" aria-hidden="true">技</span>
-          <span class="sec-title">Skills</span>
+          <h2 class="sec-title" id="skills-title">Skills</h2>
         </div>
         <div class="skills-grid">
           <div class="skill-card">
@@ -772,17 +961,26 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" id="contact" aria-labelledby="contact-title">
         <div class="sec-header">
           <span class="sec-kanji" aria-hidden="true">縁</span>
-          <span class="sec-title">Contact</span>
+          <h2 class="sec-title" id="contact-title">Let's work together</h2>
         </div>
+        <p class="about-text" style="margin-bottom: 22px">
+          Have a mobile product to build or improve? Tell me what you're working on and where you
+          need support.
+        </p>
         <div class="contact-list">
           <a class="contact-link" href="mailto:hello@jacekjanur.com">
             <div class="contact-icon">✉</div>
             hello@jacekjanur.com
           </a>
-          <a class="contact-link" href="https://linkedin.com/in/jacek-janur/" target="_blank">
+          <a
+            class="contact-link"
+            href="https://linkedin.com/in/jacek-janur/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div
               class="contact-icon"
               style="font-family: var(--sans); font-weight: 500; font-size: 11px; letter-spacing: 0"
@@ -800,21 +998,40 @@
         </p>
         <p class="foot-copy">© 2026 Jacek Janur</p>
       </footer>
-    </div>
+    </main>
+
+    <script>
+      function switchProject(idx, moveFocus) {
+        var panels = ['panel-trawell', 'panel-hanafuda'];
+        var tabs = ['tab-trawell', 'tab-hanafuda'];
+        panels.forEach(function (id, i) {
+          document.getElementById(id).hidden = i !== idx;
+        });
+        tabs.forEach(function (id, i) {
+          var el = document.getElementById(id);
+          var selected = i === idx;
+          el.setAttribute('aria-selected', selected);
+          el.tabIndex = selected ? 0 : -1;
+          el.style.borderBottom = selected ? '2px solid var(--accent)' : '2px solid transparent';
+          el.style.color = selected ? 'var(--accent)' : 'var(--ink-light)';
+        });
+        if (moveFocus) document.getElementById(tabs[idx]).focus();
+      }
+
+      function handleTabKey(event, idx) {
+        if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+          event.preventDefault();
+          switchProject(idx === 0 ? 1 : 0, true);
+        }
+        if (event.key === 'Home') {
+          event.preventDefault();
+          switchProject(0, true);
+        }
+        if (event.key === 'End') {
+          event.preventDefault();
+          switchProject(1, true);
+        }
+      }
+    </script>
   </body>
 </html>
-
-<script>
-  function switchProject(idx) {
-    var panels = ['panel-trawell', 'panel-hanafuda'];
-    var tabs = ['tab-trawell', 'tab-hanafuda'];
-    panels.forEach(function (id, i) {
-      document.getElementById(id).style.display = i === idx ? 'block' : 'none';
-    });
-    tabs.forEach(function (id, i) {
-      var el = document.getElementById(id);
-      el.style.borderBottom = i === idx ? '2px solid var(--accent)' : '2px solid transparent';
-      el.style.color = i === idx ? 'var(--accent)' : 'var(--ink-light)';
-    });
-  }
-</script>
